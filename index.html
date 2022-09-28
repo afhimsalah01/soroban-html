@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Soroban Exam Exercises</title>
+
+		
+	</head>
+
+	<body>
+		
+<div>Time left = <span id="timer"></span></div>
+<script>
+document.getElementById('timer').innerHTML =
+  15 + ":" + 00;
+startTimer();
+
+function startTimer() {
+  var presentTime = document.getElementById('timer').innerHTML;
+  var timeArray = presentTime.split(/[:]+/);
+  var m = timeArray[0];
+  var s = checkSecond((timeArray[1] - 1));
+  if(s==59){m=m-1}
+  if(m<0){alert('stop the timer is completed')}
+  
+  document.getElementById('timer').innerHTML =
+    m + ":" + s;
+  setTimeout(startTimer, 1000);
+}
+
+function checkSecond(sec) {
+  if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+  if (sec < 0) {sec = "59"};
+  return sec;
+}
+</script>
+		
+		
+		<script type="text/javascript">
+function randomlinks(){
+    var myrandom=Math.round(Math.random()*2)
+    var links=new Array()
+    links[0]="1.html"
+    links[1]="2.html"
+    links[2]="0.html"
+   
+
+    window.location=links[myrandom]
+}
+</script>
+
+<form>
+<input type="button" value="start exam" onClick="randomlinks()">
+</form>
+
+
+
+
+
+
+
+
+	</body>
+</html>
+
